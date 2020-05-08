@@ -1,18 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import HelloWorld from './src/components/HelloWorld';
-import HelloIndonesia from './src/components/HelloIndonesia';
+import Layout from './src/components/Layout';
+import List from './src/components/List';
+
 
 class App extends Component {
+constructor () {
+  super();
+  this.state = {
+    greeting: 'Selamat Datang. Welcome To React Native.....'
+  }
+}
+
+componentDidMount() {
+}
   render() {
     return (
-      <View style={styles.container}>
-      <Text style={styles.titletext}>Data COVID-19 Global dan Indonesia</Text>
-      <Text style={styles.text}>Global</Text>
-        <HelloWorld />
-      <Text style={styles.text}>Indonesia </Text>
-        <HelloIndonesia />
-      </View>
+     // <Layout/>
+     <List/>
+
     )
   }
 }
@@ -24,16 +30,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  titletext: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'brown'
-  }
 });
 
 export default App;
